@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>MapLibre 計測ツール（地理院淡色地図）</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/maplibre-gl@3.4.0/dist/maplibre-gl.js"></script>
+    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="panel">
+        <button id="toggle-panel">計測メニュー</button>
+        <div id="panel-content">
+            <div id="tabs">
+                <button id="tab-distance" class="active">距離計測</button>
+                <button id="tab-area">面積計測</button>
+            </div>
+            <div id="distance-content" class="content active">
+                <h4>距離計測</h4>
+                <p>地図上で構成点を順にクリックすると、計測範囲が表示されます。</p>
+                <p>距離: <span id="distance">0 m</span></p>
+                <button id="start-distance">距離計測開始</button>
+                <button id="clear-distance">クリア</button>
+            </div>
+            <div id="area-content" class="content">
+                <h4>面積計測</h4>
+                <p>地図上で3点以上をクリックすると、面積を計測できます。</p>
+                <p>面積: <span id="area">0 m²</span><br>周長: <span id="perimeter">0 m</span></p>
+                <button id="start-area">面積計測開始</button>
+                <button id="clear-area">クリア</button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
